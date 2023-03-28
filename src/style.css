@@ -41,7 +41,59 @@ nav ul li a {
 }
 
 .MainPage .content {
-  height: 500px;
   width: 1200px;
-  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.CartCard {
+  min-width: 300px;
+  float: left;
+  /* border: 1px solid green; */
+}
+
+.CartCard .card-content {
+  margin: 20px;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+
+.CartCard .card-img {
+  background-color: whitesmoke;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.CartCard .card-img svg {
+  width: 100px;
+  height: 100px;
+}
+
+.CartCard .card-body {
+  margin: 10px;
+}
+
+.CartCard .card-body h3 {
+  margin: 10px 0;
+}
+
+.CartCard .card-body hr {
+  height: 1px;
+  background-color: silver;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.CartCard .card-body a {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+  background-color: lightblue;
+  border-radius: 5px;
+  cursor: pointer;
 }
