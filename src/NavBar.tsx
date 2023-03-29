@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import CartIcon from "./icons/CartIcon";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -7,7 +8,10 @@ const NavBar = () => {
     <nav>
       <ul>
         <li>
-          <a>Logo</a>
+          <a>
+            <CartIcon />
+            <p>API Carts</p>
+          </a>
         </li>
         <li>
           <a onClick={() => navigate("/")}>Home</a>

@@ -12,12 +12,16 @@ nav {
 
 nav ul {
   list-style-type: none;
+  display: flex;
 }
 
 nav ul li {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px;
   background-color: silver;
+  /* opacity: 0.8; */
   border-radius: 5px;
   font-weight: 600;
   font-size: 20px;
@@ -30,7 +34,16 @@ nav ul li:first-of-type {
 }
 
 nav ul li a {
-  padding: 10px 15px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+nav ul li svg {
+  width: 80px;
+  height: 50px;
 }
 
 .MainPage {
@@ -43,6 +56,23 @@ nav ul li a {
 .MainPage .content {
   width: 1200px;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.MainPage .content .content-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 10px 0;
+  margin: 20px 0;
+  border-bottom: 1px solid silver;
+  color: #404040;
+}
+
+.MainPage .content .carts {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -50,7 +80,7 @@ nav ul li a {
 .CartCard {
   min-width: 300px;
   float: left;
-  /* border: 1px solid green; */
+  color: #404040;
 }
 
 .CartCard .card-content {
@@ -60,6 +90,7 @@ nav ul li a {
 }
 
 .CartCard .card-img {
+  position: relative;
   background-color: whitesmoke;
   height: 200px;
   display: flex;
@@ -68,7 +99,59 @@ nav ul li a {
   border-radius: 5px 5px 0 0;
 }
 
-.CartCard .card-img svg {
+.CartCard .card-img .delete-cart {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ffa8a8;
+  color: darkred;
+  font-weight: 600;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.CartCard .card-img .delete-cart .delete-msg {
+  margin: 0 8px;
+  display: none;
+}
+
+@keyframes animate-delete {
+  from {
+    width: 30px;
+  }
+  to {
+    width: 110px;
+  }
+}
+
+.CartCard .card-img .delete-cart:hover {
+  width: 110px;
+  animation-name: animate-delete;
+  animation-duration: 0.5s;
+}
+
+.CartCard .card-img .delete-cart:hover .delete-msg {
+  display: block;
+}
+
+.CartCard .card-img .delete-cart .delete-X {
+  background-color: #ed4337;
+  color: darkred;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 2px solid darkred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CartCard .card-img .svg-container {
   width: 100px;
   height: 100px;
 }

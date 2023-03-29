@@ -22,9 +22,12 @@ const MainPage = () => {
     <div className="MainPage">
       <NavBar />
       <div className="content">
-        {carts.map((cart, index) => {
-          return <CartCard cart={cart} />;
-        })}
+        <div className="content-title">All available carts</div>
+        <div className="carts">
+          {carts.map((cart, index) => {
+            return <CartCard cart={cart} />;
+          })}
+        </div>
       </div>
     </div>
   );
