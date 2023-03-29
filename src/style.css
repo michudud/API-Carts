@@ -79,6 +79,7 @@ nav ul li svg {
   background-color: #90ee90;
   color: green;
   font-size: 18px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -90,12 +91,12 @@ nav ul li svg {
     width: 40px;
   }
   to {
-    width: 150px;
+    width: 160px;
   }
 }
 
 .MainPage .content .content-title button:hover {
-  width: 150px;
+  width: 160px;
   animation-name: animate-add;
   animation-duration: 0.5s;
 }
@@ -107,7 +108,6 @@ nav ul li svg {
 .MainPage .content .content-title .add-plus {
   min-width: 40px;
   height: 40px;
-  font-weight: 600;
   font-size: 22px;
   background-color: #53d353;
   border: 2px solid green;

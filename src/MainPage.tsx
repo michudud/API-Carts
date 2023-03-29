@@ -7,14 +7,50 @@ const MainPage = () => {
   const [carts, setCarts] = useState(allCarts.carts);
 
   useEffect(() => {
-    //requestCarts();
+    // requestCarts();
   }, []);
 
   async function requestCarts() {
     try {
-      fetch("https://dummyjson.com/carts")
-        .then((res) => res.json())
-        .then(console.log);
+      const res = await fetch("https://dummyjson.com/carts");
+      const json = await res.json();
+      setCarts(json);
+    } catch (error) {}
+  }
+
+  async function addCart() {
+    try {
+      const res = await fetch("https://dummyjson.com/carts/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: 1,
+          products: [
+            {
+              id: 1,
+              quantity: 1,
+            },
+            {
+              id: 50,
+              quantity: 2,
+            },
+          ],
+        }),
+      });
+
+      const json = await res.json();
+      console.log(json);
+    } catch (error) {}
+  }
+
+  async function deleteCart() {
+    try {
+      const res = await fetch("https://dummyjson.com/carts/1", {
+        method: "DELETE",
+      });
+
+      const json = await res.json();
+      console.log(json);
     } catch (error) {}
   }
 
@@ -24,7 +60,7 @@ const MainPage = () => {
       <div className="content">
         <div className="content-title">
           All available carts
-          <button>
+          <button onClick={addCart}>
             <span className="add-plus">+</span>
             <span className="add-msg">Add cart</span>
           </button>

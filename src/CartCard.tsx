@@ -16,7 +16,6 @@ const CartCard = ({ cart }) => {
     discoutColor = "#FF4500";
   }
 
-  console.log(discountPercentage, discoutColor);
   return (
     <div className="CartCard">
       <div className="card-content">
