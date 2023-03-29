@@ -22,7 +22,13 @@ const MainPage = () => {
     <div className="MainPage">
       <NavBar />
       <div className="content">
-        <div className="content-title">All available carts</div>
+        <div className="content-title">
+          All available carts
+          <button>
+            <span className="add-plus">+</span>
+            <span className="add-msg">Add cart</span>
+          </button>
+        </div>
         <div className="carts">
           {carts.map((cart, index) => {
             return <CartCard cart={cart} />;

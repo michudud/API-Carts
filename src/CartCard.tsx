@@ -22,8 +22,8 @@ const CartCard = ({ cart }) => {
       <div className="card-content">
         <div className="card-img">
           <a className="delete-cart">
-            <p className="delete-X">X</p>
-            <p className="delete-msg">Delete</p>
+            <span className="delete-X">X</span>
+            <span className="delete-msg">Delete</span>
           </a>
           <div className="svg-container">
             <CartIcon />

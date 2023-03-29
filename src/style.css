@@ -71,6 +71,57 @@ nav ul li svg {
   color: #404040;
 }
 
+.MainPage .content .content-title button {
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: #90ee90;
+  color: green;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@keyframes animate-add {
+  from {
+    width: 40px;
+  }
+  to {
+    width: 150px;
+  }
+}
+
+.MainPage .content .content-title button:hover {
+  width: 150px;
+  animation-name: animate-add;
+  animation-duration: 0.5s;
+}
+
+.MainPage .content .content-title button:hover .add-msg {
+  display: block;
+}
+
+.MainPage .content .content-title .add-plus {
+  min-width: 40px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 22px;
+  background-color: #53d353;
+  border: 2px solid green;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MainPage .content .content-title .add-msg {
+  white-space: nowrap;
+  margin: 0 14px;
+  display: none;
+}
+
 .MainPage .content .carts {
   display: flex;
   flex-wrap: wrap;
