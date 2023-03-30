@@ -1,7 +1,7 @@
 import React from "react";
 import CartIcon from "./icons/CartIcon";
 
-const CartCard = ({ cart }) => {
+const CartCard = ({ cart, deleteCart }) => {
   let discoutColor;
   const discountPercentage = Math.floor(
     ((cart.total - cart.discountedTotal) / cart.total) * 100
@@ -20,10 +20,10 @@ const CartCard = ({ cart }) => {
     <div className="CartCard">
       <div className="card-content">
         <div className="card-img">
-          <a className="delete-cart">
+          <button className="delete-cart" onClick={() => deleteCart(cart.id)}>
             <span className="delete-X">X</span>
             <span className="delete-msg">Delete</span>
-          </a>
+          </button>
           <div className="svg-container">
             <CartIcon />
           </div>

@@ -19,39 +19,59 @@ const MainPage = () => {
   }
 
   async function addCart() {
+    let randProducts = [];
+    const numOfProducts = Math.floor(Math.random() * 10 + 1);
+    for (let i = 0; i < numOfProducts; i++) {
+      randProducts.push({
+        //hardcoded number of products = 100 https://dummyjson.com/products
+        id: Math.floor(Math.random() * 100 + 1),
+        quantity: Math.floor(Math.random() * 3 + 1),
+      });
+    }
+
     try {
       const res = await fetch("https://dummyjson.com/carts/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userId: 1,
-          products: [
-            {
-              id: 1,
-              quantity: 1,
-            },
-            {
-              id: 50,
-              quantity: 2,
-            },
-          ],
+          products: randProducts,
         }),
       });
-
       const json = await res.json();
-      console.log(json);
-    } catch (error) {}
+      //requestCarts() - normal database
+
+      //local database update
+      const newCarts = [...carts];
+      json.id = carts[carts.length - 1].id + 1;
+      newCarts.push(json);
+      setCarts(newCarts);
+      //
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  async function deleteCart() {
+  async function deleteCart(id) {
+    //because not possible to update dummy database
+    const dummyId = 1;
+    //
     try {
-      const res = await fetch("https://dummyjson.com/carts/1", {
+      const res = await fetch(`https://dummyjson.com/carts/${dummyId}`, {
         method: "DELETE",
       });
-
       const json = await res.json();
-      console.log(json);
-    } catch (error) {}
+      //requestCarts() - normal database
+
+      //local database update
+      const newCarts = [...carts];
+      const cartToDelete = newCarts.findIndex((obj) => obj.id === id);
+      newCarts.splice(cartToDelete, 1);
+      setCarts(newCarts);
+      //
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -67,7 +87,13 @@ const MainPage = () => {
         </div>
         <div className="carts">
           {carts.map((cart, index) => {
-            return <CartCard cart={cart} />;
+            return (
+              <CartCard
+                cart={cart}
+                deleteCart={deleteCart}
+                key={index + new Date().getTime()}
+              />
+            );
           })}
         </div>
       </div>

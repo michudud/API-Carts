@@ -159,6 +159,7 @@ nav ul li svg {
   background-color: #ffa8a8;
   color: darkred;
   font-weight: 600;
+  border: none;
   border-radius: 15px;
   display: flex;
   align-items: center;
