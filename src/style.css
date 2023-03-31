@@ -130,7 +130,7 @@ nav ul li svg {
 
 .CartCard {
   min-width: 300px;
-  float: left;
+  /* float: left; */
   color: #404040;
 }
 
@@ -231,4 +231,37 @@ nav ul li svg {
   background-color: lightblue;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.AddCartCard {
+  min-width: 260px;
+  height: 372px;
+  color: #404040;
+  margin: 20px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #90ee90;
+  cursor: pointer;
+}
+
+.AddCartCard svg {
+  margin: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.AddCartCard h1 {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #53d353;
+  border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 30px;
 }

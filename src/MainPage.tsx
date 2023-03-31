@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { allCarts } from "./allCarts";
 import CartCard from "./CartCard";
+import CartIcon from "./icons/CartIcon";
 import NavBar from "./NavBar";
 
 const MainPage = () => {
@@ -95,6 +96,11 @@ const MainPage = () => {
               />
             );
           })}
+          <button onClick={addCart} className="AddCartCard">
+            <CartIcon />
+            <h1>+</h1>
+            <h3>Add cart</h3>
+          </button>
         </div>
       </div>
     </div>
