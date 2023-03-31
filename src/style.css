@@ -19,7 +19,7 @@ nav ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 20px 10px;
   background-color: silver;
   /* opacity: 0.8; */
   border-radius: 5px;
@@ -46,21 +46,22 @@ nav ul li svg {
   height: 50px;
 }
 
-.MainPage {
+.MainPage,
+.CartDetails {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.MainPage .content {
+.content {
   width: 1200px;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.MainPage .content .content-title {
+.content .content-title {
   display: flex;
   justify-content: space-between;
   font-size: 28px;
@@ -71,7 +72,7 @@ nav ul li svg {
   color: #404040;
 }
 
-.MainPage .content .content-title button {
+.content .content-title button {
   border: none;
   height: 40px;
   width: 40px;
@@ -264,4 +265,43 @@ nav ul li svg {
   align-items: center;
   font-size: 28px;
   margin-bottom: 30px;
+}
+
+.CartDetails .content .content-title button {
+  width: 100px;
+  background-color: #404040;
+  color: silver;
+  justify-content: center;
+}
+
+.CartDetails .content .details {
+  width: 1200px;
+}
+
+.CartDetails .content .details table {
+  border-collapse: collapse;
+  width: 1000px;
+  margin: 20px 100px;
+}
+
+.CartDetails .content .details table thead {
+  background-color: whitesmoke;
+}
+
+.CartDetails .content .details table tr .empty-noborder {
+  border: none;
+}
+
+.CartDetails .content .details table td,
+th {
+  /* width: 150px; */
+  padding: 10px 10px;
+  text-align: center;
+  border-bottom: 1px solid silver;
+}
+
+.CartDetails .content .details table td:first-child,
+th:first-child {
+  width: 500px;
+  text-align: start;
 }

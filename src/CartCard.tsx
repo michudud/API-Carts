@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import CartIcon from "./icons/CartIcon";
 
 const CartCard = ({ cart, deleteCart }) => {
+  const navigate = useNavigate();
   let discoutColor;
   const discountPercentage = Math.floor(
     ((cart.total - cart.discountedTotal) / cart.total) * 100
@@ -43,7 +45,9 @@ const CartCard = ({ cart, deleteCart }) => {
               {cart.discountedTotal}$
             </span>
           </p>
-          <a>Details</a>
+          <a onClick={() => navigate(`/details/${cart.id}`, { state: cart })}>
+            Details
+          </a>
         </div>
       </div>
     </div>
