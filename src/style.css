@@ -278,30 +278,29 @@ nav ul li svg {
   width: 1200px;
 }
 
-.CartDetails .content .details table {
+.DetailsTable {
   border-collapse: collapse;
   width: 1000px;
   margin: 20px 100px;
 }
 
-.CartDetails .content .details table thead {
+.DetailsTable thead {
   background-color: whitesmoke;
 }
 
-.CartDetails .content .details table tr .empty-noborder {
+.DetailsTable tr .empty-noborder {
   border: none;
 }
 
-.CartDetails .content .details table td,
+.DetailsTable td,
 th {
-  /* width: 150px; */
-  padding: 10px 10px;
+  padding: 15px 10px;
   text-align: center;
   border-bottom: 1px solid silver;
 }
 
-.CartDetails .content .details table td:first-child,
+.DetailsTable td:first-child,
 th:first-child {
-  width: 500px;
+  width: 450px;
   text-align: start;
 }
