@@ -92,7 +92,7 @@ const MainPage = () => {
               <CartCard
                 cart={cart}
                 deleteCart={deleteCart}
-                key={index + new Date().getTime()}
+                key={"cart" + index + new Date().getTime()}
               />
             );
           })}

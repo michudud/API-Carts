@@ -13,9 +13,9 @@ const DetailsTable = ({ cart }) => {
         </tr>
       </thead>
       <tbody>
-        {cart.products.map((product) => {
+        {cart.products.map((product, index) => {
           return (
-            <tr>
+            <tr key={"product" + index + new Date().getTime()}>
               <td>{product.title}</td>
               <td style={{ textDecoration: "line-through" }}>
                 {product.price}$
