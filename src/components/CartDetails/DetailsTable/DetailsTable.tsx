@@ -1,3 +1,4 @@
+import "./DetailsTable.css";
 import React from "react";
 
 const DetailsTable = ({ cart }) => {

@@ -1,6 +1,7 @@
+import "./CartCard.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import CartIcon from "./icons/CartIcon";
+import CartIcon from "../../icons/CartIcon";
 
 const CartCard = ({ cart, deleteCart }) => {
   const navigate = useNavigate();

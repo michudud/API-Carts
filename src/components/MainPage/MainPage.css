@@ -1,0 +1,114 @@
+@keyframes animate-add {
+  from {
+    width: 40px;
+  }
+  to {
+    width: 160px;
+  }
+}
+
+.MainPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MainPage .content {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.MainPage .content .content-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 10px 0;
+  margin: 20px 0;
+  border-bottom: 1px solid silver;
+  color: #404040;
+}
+
+.MainPage .content .content-title button {
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: #90ee90;
+  color: green;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.MainPage .content .content-title button:hover {
+  width: 160px;
+  animation-name: animate-add;
+  animation-duration: 0.5s;
+}
+
+.MainPage .content .content-title button:hover .add-msg {
+  display: block;
+}
+
+.MainPage .content .content-title .add-plus {
+  min-width: 40px;
+  height: 40px;
+  font-size: 22px;
+  background-color: #53d353;
+  border: 2px solid green;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MainPage .content .content-title .add-msg {
+  white-space: nowrap;
+  margin: 0 14px;
+  display: none;
+}
+
+.MainPage .content .carts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.AddCartCard {
+  min-width: 260px;
+  height: 372px;
+  color: #404040;
+  margin: 20px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #90ee90;
+  cursor: pointer;
+}
+
+.AddCartCard svg {
+  margin: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.AddCartCard h1 {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #53d353;
+  border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import "./DetailsChart.css";
+import React from "react";
 
 const DetailsChart = ({ products }) => {
   window.scrollTo(0, 0);

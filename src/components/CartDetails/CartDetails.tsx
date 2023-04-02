@@ -1,9 +1,10 @@
+import "./CartDetails.css";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import DetailsTable from "./DetailsTable";
-import NavBar from "./NavBar";
+import NavBar from "../NavBar";
 import DetailsChart from "./DetailsChart";
-import Footer from "./Footer";
+import Footer from "../Footer";
 
 const CartDetails = ({}) => {
   const location = useLocation();

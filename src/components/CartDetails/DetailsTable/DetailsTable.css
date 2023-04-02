@@ -1,0 +1,26 @@
+.DetailsTable {
+  border-collapse: collapse;
+  width: 1000px;
+  margin: 20px 100px;
+}
+
+.DetailsTable thead {
+  background-color: whitesmoke;
+}
+
+.DetailsTable tr .empty-noborder {
+  border: none;
+}
+
+.DetailsTable td,
+th {
+  padding: 15px 10px;
+  text-align: center;
+  border-bottom: 1px solid silver;
+}
+
+.DetailsTable td:first-child,
+th:first-child {
+  width: 450px;
+  text-align: start;
+}

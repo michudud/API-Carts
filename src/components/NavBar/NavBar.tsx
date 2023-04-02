@@ -1,6 +1,7 @@
+import "./NavBar.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import CartIcon from "./icons/CartIcon";
+import CartIcon from "../../icons/CartIcon";
 
 const NavBar = () => {
   const navigate = useNavigate();
