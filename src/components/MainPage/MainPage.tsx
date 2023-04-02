@@ -5,6 +5,7 @@ import CartCard from "../CartCard";
 import CartIcon from "../../icons/CartIcon";
 import NavBar from "../NavBar";
 import Footer from "../Footer";
+import { addCart, deleteCart } from "./apiFunctions";
 
 const MainPage = () => {
   const [carts, setCarts] = useState(allCarts.carts);
@@ -21,61 +22,17 @@ const MainPage = () => {
     } catch (error) {}
   }
 
-  async function addCart() {
-    let randProducts = [];
-    const numOfProducts = Math.floor(Math.random() * 10 + 1);
-    for (let i = 0; i < numOfProducts; i++) {
-      randProducts.push({
-        //hardcoded number of products = 100 https://dummyjson.com/products
-        id: Math.floor(Math.random() * 100 + 1),
-        quantity: Math.floor(Math.random() * 3 + 1),
-      });
-    }
+  const handleDelete = async (id: number) => {
+    const newCarts = await deleteCart(id, carts);
+    //local database update
+    setCarts(newCarts);
+  };
 
-    try {
-      const res = await fetch("https://dummyjson.com/carts/add", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          userId: 1,
-          products: randProducts,
-        }),
-      });
-      const json = await res.json();
-      //requestCarts() - normal database
-
-      //local database update
-      const newCarts = [...carts];
-      json.id = carts[carts.length - 1].id + 1;
-      newCarts.push(json);
-      setCarts(newCarts);
-      //
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function deleteCart(id) {
-    //because not possible to update dummy database
-    const dummyId = 1;
-    //
-    try {
-      const res = await fetch(`https://dummyjson.com/carts/${dummyId}`, {
-        method: "DELETE",
-      });
-      const json = await res.json();
-      //requestCarts() - normal database
-
-      //local database update
-      const newCarts = [...carts];
-      const cartToDelete = newCarts.findIndex((obj) => obj.id === id);
-      newCarts.splice(cartToDelete, 1);
-      setCarts(newCarts);
-      //
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const handleAdd = async () => {
+    const newCarts = await addCart(carts);
+    //local database update
+    setCarts(newCarts);
+  };
 
   return (
     <div className="MainPage">
@@ -83,7 +40,7 @@ const MainPage = () => {
       <div className="content">
         <div className="content-title">
           All available carts
-          <button onClick={addCart}>
+          <button onClick={handleAdd}>
             <span className="add-plus">+</span>
             <span className="add-msg">Add cart</span>
           </button>
@@ -93,12 +50,12 @@ const MainPage = () => {
             return (
               <CartCard
                 cart={cart}
-                deleteCart={deleteCart}
+                deleteCart={handleDelete}
                 key={"cart" + index + new Date().getTime()}
               />
             );
           })}
-          <button onClick={addCart} className="AddCartCard">
+          <button onClick={handleAdd} className="AddCartCard">
             <CartIcon />
             <h1>+</h1>
             <h3>Add cart</h3>
