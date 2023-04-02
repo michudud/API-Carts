@@ -10,7 +10,6 @@ const DetailsChart = ({ products }) => {
   for (let i = 0; i < intervalNum; i++) {
     valueInterval.push(Math.round(maxChartValue / intervalNum) * (i + 1));
   }
-  console.log(valueInterval);
 
   return (
     <div className="DetailsChart">
@@ -59,7 +58,7 @@ const DetailsChart = ({ products }) => {
         })}
         {/* /y-axis names */}
         {/* chart */}
-        <svg x="100" y="80" width="840">
+        <svg x="100" y="80" width="880">
           {products.map((product, index) => {
             return (
               <g key={"point" + index + new Date().getTime()}>
