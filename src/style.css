@@ -47,6 +47,20 @@ nav ul li svg {
   height: 50px;
 }
 
+footer {
+  background-color: #303030;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  color: silver;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+footer p {
+  margin-right: 20px;
+}
+
 .MainPage,
 .CartDetails {
   display: flex;

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 const DetailsChart = ({ products }) => {
+  window.scrollTo(0, 0);
   const dataSetWidth = (100 / products.length / 100) * 840;
   const maxPrice = 1.2 * Math.max(...products.map((prod) => prod.price));
   const maxChartValue = maxPrice;

@@ -3,6 +3,7 @@ import { allCarts } from "./allCarts";
 import CartCard from "./CartCard";
 import CartIcon from "./icons/CartIcon";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 const MainPage = () => {
   const [carts, setCarts] = useState(allCarts.carts);
@@ -103,6 +104,7 @@ const MainPage = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

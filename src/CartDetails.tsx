@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import DetailsTable from "./DetailsTable";
 import NavBar from "./NavBar";
 import DetailsChart from "./DetailsChart";
+import Footer from "./Footer";
 
 const CartDetails = ({}) => {
   const location = useLocation();
@@ -28,6 +29,7 @@ const CartDetails = ({}) => {
           <DetailsChart products={cart.products} />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
