@@ -1,23 +1,13 @@
 import { createContext, useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
 
-export const CartsContext = createContext(null);
+export const CartsContext = createContext();
 
 export function CartsContextProvider({ children }) {
-  const [carts, setCarts] = useState([]);
-
-  useEffect(() => {
-    async function requestCarts() {
-      try {
-        const res = await fetch("https://dummyjson.com/carts");
-        const json = await res.json();
-        setCarts(json.carts);
-      } catch (error) {}
-    }
-    requestCarts();
-  }, []);
+  const { carts, setCarts, loading, error } = useFetch();
 
   return (
-    <CartsContext.Provider value={{ carts, setCarts }}>
+    <CartsContext.Provider value={{ carts, setCarts, loading, error }}>
       {children}
     </CartsContext.Provider>
   );
