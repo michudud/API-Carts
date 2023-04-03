@@ -8,30 +8,30 @@ import { addCart, deleteCart } from "./apiFunctions";
 import { CartsContext } from "../../context/CartsContext";
 
 interface ContextInterface {
-  carts:
-    | {
-        id: number;
-        products: [
-          {
-            id: number;
-            title: string;
-            price: number;
-            quantity: number;
-            total: number;
-            discountPercentage: number;
-            discountedPrice: number;
-          }
-        ];
-        total: number;
-        discountedTotal: number;
-        userId: number;
-        totalProducts: number;
-        totalQuantity: number;
-      }[]
-    | [];
+  carts: Cart[] | [];
   setCarts: Function;
   loading: boolean;
   error: any;
+}
+
+interface Cart {
+  id: number;
+  products: Product[];
+  total: number;
+  discountedTotal: number;
+  userId: number;
+  totalProducts: number;
+  totalQuantity: number;
+}
+
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  total: number;
+  discountPercentage: number;
+  discountedPrice: number;
 }
 
 const MainPage = () => {

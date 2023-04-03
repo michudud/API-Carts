@@ -2,10 +2,30 @@ import { ReactElement, createContext, useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 
 interface ContextInterface {
-  carts: object[] | [];
+  carts: Cart[] | [];
   setCarts: Function;
   loading: boolean;
   error: any;
+}
+
+interface Cart {
+  id: number;
+  products: Product[];
+  total: number;
+  discountedTotal: number;
+  userId: number;
+  totalProducts: number;
+  totalQuantity: number;
+}
+
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  total: number;
+  discountPercentage: number;
+  discountedPrice: number;
 }
 
 export const CartsContext = createContext<ContextInterface | null>(null);

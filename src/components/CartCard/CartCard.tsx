@@ -4,26 +4,28 @@ import { useNavigate } from "react-router-dom";
 import CartIcon from "../../icons/CartIcon";
 
 interface CartCardProps {
-  cart: {
-    id: number;
-    products: [
-      {
-        id: number;
-        title: string;
-        price: number;
-        quantity: number;
-        total: number;
-        discountPercentage: number;
-        discountedPrice: number;
-      }
-    ];
-    total: number;
-    discountedTotal: number;
-    userId: number;
-    totalProducts: number;
-    totalQuantity: number;
-  };
+  cart: Cart;
   deleteCart: Function;
+}
+
+interface Cart {
+  id: number;
+  products: Product[];
+  total: number;
+  discountedTotal: number;
+  userId: number;
+  totalProducts: number;
+  totalQuantity: number;
+}
+
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  total: number;
+  discountPercentage: number;
+  discountedPrice: number;
 }
 
 const CartCard = ({ cart, deleteCart }: CartCardProps) => {

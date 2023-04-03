@@ -2,17 +2,17 @@ import "./DetailsChart.css";
 import React from "react";
 
 interface DetailsChartProps {
-  products: [
-    {
-      id: number;
-      title: string;
-      price: number;
-      quantity: number;
-      total: number;
-      discountPercentage: number;
-      discountedPrice: number;
-    }
-  ];
+  products: Product[];
+}
+
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  total: number;
+  discountPercentage: number;
+  discountedPrice: number;
 }
 
 const DetailsChart = ({ products }: DetailsChartProps) => {
