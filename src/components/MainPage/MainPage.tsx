@@ -22,39 +22,37 @@ const MainPage = () => {
     setCarts(newCarts);
   };
 
-  if (carts) {
-    return (
-      <div className="MainPage">
-        <NavBar />
-        <div className="content">
-          <div className="content-title">
-            All available carts
-            <button onClick={handleAdd}>
-              <span className="add-plus">+</span>
-              <span className="add-msg">Add cart</span>
-            </button>
-          </div>
-          <div className="carts">
-            {carts.map((cart, index) => {
-              return (
-                <CartCard
-                  cart={cart}
-                  deleteCart={handleDelete}
-                  key={"cart" + index + new Date().getTime()}
-                />
-              );
-            })}
-            <button onClick={handleAdd} className="AddCartCard">
-              <CartIcon />
-              <h1>+</h1>
-              <h3>Add cart</h3>
-            </button>
-          </div>
+  return (
+    <div className="MainPage">
+      <NavBar />
+      <div className="content">
+        <div className="content-title">
+          All available carts
+          <button onClick={handleAdd}>
+            <span className="add-plus">+</span>
+            <span className="add-msg">Add cart</span>
+          </button>
         </div>
-        <Footer />
+        <div className="carts">
+          {carts.map((cart, index) => {
+            return (
+              <CartCard
+                cart={cart}
+                deleteCart={handleDelete}
+                key={"cart" + index + new Date().getTime()}
+              />
+            );
+          })}
+          <button onClick={handleAdd} className="AddCartCard">
+            <CartIcon />
+            <h1>+</h1>
+            <h3>Add cart</h3>
+          </button>
+        </div>
       </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 };
 
 export default MainPage;
