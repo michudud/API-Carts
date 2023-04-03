@@ -1,9 +1,16 @@
-import { createContext, useEffect, useState } from "react";
+import { ReactElement, createContext, useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 
-export const CartsContext = createContext();
+interface ContextInterface {
+  carts: object[] | [];
+  setCarts: Function;
+  loading: boolean;
+  error: any;
+}
 
-export function CartsContextProvider({ children }) {
+export const CartsContext = createContext<ContextInterface | null>(null);
+
+export function CartsContextProvider({ children }: { children: ReactElement }) {
   const { carts, setCarts, loading, error } = useFetch();
 
   return (

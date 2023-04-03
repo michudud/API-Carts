@@ -7,8 +7,36 @@ import Footer from "../Footer";
 import { addCart, deleteCart } from "./apiFunctions";
 import { CartsContext } from "../../context/CartsContext";
 
+interface ContextInterface {
+  carts:
+    | {
+        id: number;
+        products: [
+          {
+            id: number;
+            title: string;
+            price: number;
+            quantity: number;
+            total: number;
+            discountPercentage: number;
+            discountedPrice: number;
+          }
+        ];
+        total: number;
+        discountedTotal: number;
+        userId: number;
+        totalProducts: number;
+        totalQuantity: number;
+      }[]
+    | [];
+  setCarts: Function;
+  loading: boolean;
+  error: any;
+}
+
 const MainPage = () => {
-  const { carts, setCarts, loading, error } = useContext(CartsContext);
+  const { carts, setCarts, loading, error } =
+    useContext<ContextInterface>(CartsContext);
 
   const handleDelete = async (id: number) => {
     const newCarts = await deleteCart(id, carts);

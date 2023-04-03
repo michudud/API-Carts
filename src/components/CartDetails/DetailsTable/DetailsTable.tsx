@@ -1,7 +1,30 @@
 import "./DetailsTable.css";
 import React from "react";
 
-const DetailsTable = ({ cart }) => {
+interface DetailsTableProps {
+  cart: {
+    id: number;
+    products: [
+      {
+        id: number;
+        title: string;
+        price: number;
+        quantity: number;
+        total: number;
+        discountPercentage: number;
+        discountedPrice: number;
+      }
+    ];
+    total: number;
+    discountedTotal: number;
+    userId: number;
+    totalProducts: number;
+    totalQuantity: number;
+  };
+  deleteCart: Function;
+}
+
+const DetailsTable = ({ cart }: DetailsTableProps) => {
   return (
     <table className="DetailsTable">
       <thead>

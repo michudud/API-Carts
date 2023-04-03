@@ -1,7 +1,21 @@
 import "./DetailsChart.css";
 import React from "react";
 
-const DetailsChart = ({ products }) => {
+interface DetailsChartProps {
+  products: [
+    {
+      id: number;
+      title: string;
+      price: number;
+      quantity: number;
+      total: number;
+      discountPercentage: number;
+      discountedPrice: number;
+    }
+  ];
+}
+
+const DetailsChart = ({ products }: DetailsChartProps) => {
   window.scrollTo(0, 0);
   const dataSetWidth = (100 / products.length / 100) * 840;
   const maxPrice = 1.2 * Math.max(...products.map((prod) => prod.price));

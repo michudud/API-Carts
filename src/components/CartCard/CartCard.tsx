@@ -3,7 +3,30 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import CartIcon from "../../icons/CartIcon";
 
-const CartCard = ({ cart, deleteCart }) => {
+interface CartCardProps {
+  cart: {
+    id: number;
+    products: [
+      {
+        id: number;
+        title: string;
+        price: number;
+        quantity: number;
+        total: number;
+        discountPercentage: number;
+        discountedPrice: number;
+      }
+    ];
+    total: number;
+    discountedTotal: number;
+    userId: number;
+    totalProducts: number;
+    totalQuantity: number;
+  };
+  deleteCart: Function;
+}
+
+const CartCard = ({ cart, deleteCart }: CartCardProps) => {
   const navigate = useNavigate();
   let discoutColor;
   const discountPercentage = Math.floor(
