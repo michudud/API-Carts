@@ -50,7 +50,7 @@ const DetailsChart = ({ products }: DetailsChartProps) => {
         {/* y-axis names */}
         {valueInterval.map((value, index) => {
           return (
-            <g key={"y-axis" + index + new Date().getTime()}>
+            <g key={"y-axis" + index}>
               <line
                 x1="95"
                 y1={420 - (value / maxChartValue) * 340 - 6}
@@ -76,7 +76,7 @@ const DetailsChart = ({ products }: DetailsChartProps) => {
         <svg x="100" y="80" width="880">
           {products.map((product, index) => {
             return (
-              <g key={"point" + index + new Date().getTime()}>
+              <g key={"point" + index}>
                 {/* x-axis names */}
                 <line
                   x1={dataSetWidth * index + dataSetWidth / 2}
