@@ -15,7 +15,8 @@
 }
 
 .MainPage .content {
-  width: 1200px;
+  max-width: 1200px;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -111,4 +112,14 @@
   align-items: center;
   font-size: 28px;
   margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) {
+  .MainPage .content {
+    width: 100%;
+  }
+
+  .MainPage .content .content-title {
+    margin: 20px 10px;
+  }
 }

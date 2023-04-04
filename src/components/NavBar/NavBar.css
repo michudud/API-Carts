@@ -1,6 +1,7 @@
 nav {
   background-color: #303030;
   width: 100%;
+  min-width: 600px;
 }
 
 nav ul {
