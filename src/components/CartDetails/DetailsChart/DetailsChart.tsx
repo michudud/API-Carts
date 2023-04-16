@@ -20,7 +20,7 @@ const DetailsChart = ({ products }: DetailsChartProps) => {
   const dataSetWidth = (100 / products.length / 100) * 840;
   const maxPrice = 1.2 * Math.max(...products.map((prod) => prod.price));
   const maxChartValue = maxPrice;
-  const intervalNum = 6;
+  const intervalNum: number = 6;
   let valueInterval = [];
   for (let i = 0; i < intervalNum; i++) {
     valueInterval.push(Math.round(maxChartValue / intervalNum) * (i + 1));

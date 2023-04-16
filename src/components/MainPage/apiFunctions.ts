@@ -1,6 +1,26 @@
-export async function deleteCart(id: number, carts) {
+interface Cart {
+  id: number;
+  products: Product[];
+  total: number;
+  discountedTotal: number;
+  userId: number;
+  totalProducts: number;
+  totalQuantity: number;
+}
+
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  total: number;
+  discountPercentage: number;
+  discountedPrice: number;
+}
+
+export async function deleteCart(id: number, carts: Cart[]) {
   //because not possible to update dummy database
-  const dummyId = 1;
+  const dummyId: number = 1;
   //
   try {
     const res = await fetch(`https://dummyjson.com/carts/${dummyId}`, {
@@ -16,7 +36,7 @@ export async function deleteCart(id: number, carts) {
   }
 }
 
-export async function addCart(carts) {
+export async function addCart(carts: Cart[]) {
   let randProducts = [];
   const numOfProducts = Math.floor(Math.random() * 10 + 1);
   //hardcoded number of products = 100 https://dummyjson.com/products

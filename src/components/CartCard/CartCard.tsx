@@ -30,7 +30,7 @@ interface Product {
 
 const CartCard = ({ cart, deleteCart }: CartCardProps) => {
   const navigate = useNavigate();
-  let discoutColor;
+  let discoutColor: string;
   const discountPercentage = Math.floor(
     ((cart.total - cart.discountedTotal) / cart.total) * 100
   );
