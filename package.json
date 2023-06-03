@@ -1,10 +1,12 @@
 {
   "name": "api-carts",
+  "homepage": "http://michudud.github.io/API-Carts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
+    "deploy": "gh-pages -d dist",
+    "build": "parcel build src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +25,8 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.1",
-    "parcel": "^2.8.3",
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.9.1",
     "prettier": "^2.8.3",
     "process": "^0.11.10",
     "typescript": "^4.9.4"
