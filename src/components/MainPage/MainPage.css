@@ -17,6 +17,7 @@
 .MainPage .content {
   max-width: 1200px;
   min-width: 300px;
+  min-height: calc(100vh - 170px);
   display: flex;
   justify-content: center;
   flex-direction: column;
